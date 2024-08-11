@@ -1,0 +1,15 @@
+import 'package:flutter/material.dart';
+
+class AppPallete {
+  static const Color darkBackgroundColor = Color.fromRGBO(24, 24, 32, 1),
+  lightBackgroundColor = Color.fromRGBO(243, 243, 248, 1),
+  primary = Color(0xff0B7BFF),
+  gradient1 = Color.fromRGBO(206, 215, 244, 1),
+  gradient2 = Color.fromRGBO(116, 161, 215, 1),
+  borderDarkColor = Color.fromRGBO(52, 51, 67, 1),
+  borderLightColor = Color.fromRGBO(177, 176, 180, 1),
+  whiteColor = Colors.white,
+  greyColor = Colors.grey,
+  errorColor = Colors.redAccent,
+  transparentColor = Colors.transparent;
+}
