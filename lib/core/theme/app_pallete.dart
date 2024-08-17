@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppPallete {
+class AppPalette {
   static const Color darkBackgroundColor = Color.fromRGBO(24, 24, 32, 1),
   lightBackgroundColor = Color.fromRGBO(243, 243, 248, 1),
   primary = Color(0xff0B7BFF),
@@ -10,6 +10,7 @@ class AppPallete {
   borderLightColor = Color.fromRGBO(177, 176, 180, 1),
   whiteColor = Colors.white,
   greyColor = Colors.grey,
-  errorColor = Colors.redAccent,
+  errorColor = Color(0xffEE4646),
+  black = Color(0xff000000),
   transparentColor = Colors.transparent;
 }

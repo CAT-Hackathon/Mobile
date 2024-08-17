@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:met2ashara_app/core/router/route_names.dart';
 import 'package:met2ashara_app/core/theme/app_pallete.dart';
+import 'package:met2ashara_app/core/utils/strings.dart';
 import 'package:met2ashara_app/core/utils/widgets/cutsom_button.dart';
 import 'package:met2ashara_app/features/on_boarding/data/model/on_boarding_model.dart';
-import 'package:met2ashara_app/generated/l10n.dart';
 
 class GetButtons extends StatelessWidget {
   const GetButtons(
@@ -15,14 +16,16 @@ class GetButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     if (currentIndex == onBoardingData.length - 1) {
       return CustomButton(
-        text: S().GetStarted,
-        onPressed: () {},
+        text: AppStrings.getStarted,
+        onPressed: () {
+          AppRoutes.login.pushReplacement();
+        },
       );
     } else {
       return Column(
         children: [
           CustomButton(
-            text: S().Next,
+            text: AppStrings.next,
             onPressed: () {
               controller.nextPage(
                   duration: const Duration(microseconds: 200),
@@ -34,10 +37,10 @@ class GetButtons extends StatelessWidget {
               onPressed: () {
                 controller.jumpToPage(onBoardingData.length - 1);
               },
-              child: Text(
-                S().Skip,
-                style: const TextStyle(
-                    color: AppPallete.primary,
+              child: const Text(
+                AppStrings.skip,
+                style: TextStyle(
+                    color: AppPalette.primary,
                     decoration: TextDecoration.underline),
               ))
         ],

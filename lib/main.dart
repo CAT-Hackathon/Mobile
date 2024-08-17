@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:met2ashara_app/core/router/router_config.dart';
 import 'package:met2ashara_app/core/theme/theme.dart';
-import 'package:met2ashara_app/generated/l10n.dart';
 
 void main() {
   runApp(const Met2asharaApp());
@@ -24,13 +22,6 @@ class Met2asharaApp extends StatelessWidget {
             title: 'Met2ashara',
             theme: AppTheme.lightThemeMode,
             routerConfig: RouteConfigs.routerConfig,
-            localizationsDelegates: const [
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: S.delegate.supportedLocales,
           );
         });
   }

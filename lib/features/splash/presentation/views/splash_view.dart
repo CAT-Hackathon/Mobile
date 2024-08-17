@@ -16,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2), () {
-      AppRoutes.onBoarding.pushReplacement();
+      AppRoutes.login.pushReplacement();
     });
     super.initState();
   }
@@ -27,7 +27,7 @@ class _SplashViewState extends State<SplashView> {
         body: Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [AppPallete.gradient1, AppPallete.gradient2],
+          colors: [AppPalette.gradient1, AppPalette.gradient2],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),

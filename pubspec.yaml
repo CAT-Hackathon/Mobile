@@ -11,8 +11,10 @@ environment:
 dependencies:
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.6
+  curved_navigation_bar: ^1.0.6
   dotted_border: ^2.1.0
   fancy_shimmer_image: ^2.0.3
+  flexify: ^2.1.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
@@ -32,7 +34,6 @@ dependencies:
   isar_flutter_libs: ^4.0.0-dev.13
   liquid_swipe: ^3.1.0
   path_provider: ^2.1.0
-  persistent_bottom_nav_bar: ^5.0.2
   photo_view: ^0.15.0
   quickalert: ^1.1.0
   shared_preferences: ^2.2.3
@@ -57,12 +58,12 @@ flutter:
     - family: Quattrocento
       fonts:
         - asset: assets/fonts/Quattrocento-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
 
 flutter_assets:
   assets_path: assets/
   output_path: lib/core/utils/assets/
   filename: images.dart
   field_prefix: null
-
-flutter_intl:
-  enabled: true

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:met2ashara_app/core/router/page_transition.dart';
 import 'package:met2ashara_app/core/utils/extensions/widget_extensions.dart';
+import 'package:met2ashara_app/features/auth/presentation/views/forgot_password_view.dart';
+import 'package:met2ashara_app/features/auth/presentation/views/login_view.dart';
+import 'package:met2ashara_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:met2ashara_app/features/on_boarding/presentation/view/on_boarding_view.dart';
 import 'package:met2ashara_app/features/splash/presentation/views/splash_view.dart';
-
 
 import 'route_names.dart';
 
@@ -24,7 +26,26 @@ class RouteConfigs {
       GoRoute(
         path: AppRoutes.onBoarding.path,
         name: AppRoutes.onBoarding.name,
-        pageBuilder: (context, state) => const OnBoardingView().buildPage(transition: PageTransitions.slide),
+        pageBuilder: (context, state) =>
+            const OnBoardingView().buildPage(transition: PageTransitions.slide),
+      ),
+      GoRoute(
+        path: AppRoutes.login.path,
+        name: AppRoutes.login.name,
+        pageBuilder: (context, state) =>
+            const LoginView().buildPage(transition: PageTransitions.cupertino),
+      ),
+      GoRoute(
+        path: AppRoutes.forgetPassword.path,
+        name: AppRoutes.forgetPassword.name,
+        pageBuilder: (context, state) => const ForgotPasswordView()
+            .buildPage(transition: PageTransitions.slideUp),
+      ),
+      GoRoute(
+        path: AppRoutes.signUp.path,
+        name: AppRoutes.signUp.name,
+        pageBuilder: (context, state) =>
+            const SignUpView().buildPage(transition: PageTransitions.cupertino),
       ),
     ],
   );

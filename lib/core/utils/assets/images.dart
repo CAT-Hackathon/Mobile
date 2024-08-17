@@ -5,9 +5,25 @@ class Assets {
   /// assets/fonts/Quattrocento-Regular.ttf
   static const String fontsQuattrocentoRegular = "assets/fonts/Quattrocento-Regular.ttf";
 
+  /// Assets for fontsRobotoRegular
+  /// assets/fonts/Roboto-Regular.ttf
+  static const String fontsRobotoRegular = "assets/fonts/Roboto-Regular.ttf";
+
   /// Assets for iconsAppLogo
   /// assets/icons/appLogo.svg
   static const String iconsAppLogo = "assets/icons/appLogo.svg";
+
+  /// Assets for iconsLockPasswordIcon
+  /// assets/icons/Lock_Password_Icon.svg
+  static const String iconsLockPasswordIcon = "assets/icons/Lock_Password_Icon.svg";
+
+  /// Assets for iconsPerson
+  /// assets/icons/person.svg
+  static const String iconsPerson = "assets/icons/person.svg";
+
+  /// Assets for iconsPhoneIcon
+  /// assets/icons/Phone_Icon.svg
+  static const String iconsPhoneIcon = "assets/icons/Phone_Icon.svg";
 
   /// Assets for imagesAppleIcon
   /// assets/images/apple_icon.png

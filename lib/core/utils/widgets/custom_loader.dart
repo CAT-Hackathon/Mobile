@@ -16,7 +16,7 @@ class CustomLoader extends StatelessWidget {
             height: 20.h,
             width: 20.w,
             child: const CircularProgressIndicator(
-              color: AppPallete.gradient1,
+              color: AppPalette.gradient1,
             )),
       ),
     );
