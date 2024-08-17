@@ -11,20 +11,23 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CutsomAuthScaffold(
-      widget: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SignUpViewForm(),
-          32.verticalSpace,
-          AnotherJoinUsSection(
-            anotherMethode: AppStrings.orLoginWith,
-            joinMethodTxt: AppStrings.login,
-            dontOrAlreadyTxt: AppStrings.alreadyHaveAnAccount,
-            onJoinMethodTap: () => Navigator.pop(context),
-          ),
-        ],
-      ).paddingHorizontal(16),
+    return CustomAuthScaffold(
+      appBar: true,
+      widget: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SignUpViewForm(),
+            32.verticalSpace,
+            AnotherJoinUsSection(
+              anotherMethode: AppStrings.orLoginWith,
+              joinMethodTxt: AppStrings.login,
+              dontOrAlreadyTxt: AppStrings.alreadyHaveAnAccount,
+              onJoinMethodTap: () => Navigator.pop(context),
+            ),
+          ],
+        ).paddingHorizontal(16),
+      ),
     );
   }
 }

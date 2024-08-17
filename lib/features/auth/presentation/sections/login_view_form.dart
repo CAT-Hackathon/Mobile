@@ -102,9 +102,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
           CustomButton(
             text: AppStrings.login,
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                print('done');
-              }
+              AppRoutes.verification.push();
             },
           ),
         ],

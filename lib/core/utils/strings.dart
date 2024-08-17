@@ -20,7 +20,8 @@ abstract class AppStrings {
   static const String invalidMobile = "Invalid Mobile";
   static const String incorrectPassword = "Incorrect password";
   static const String findYourAccount = "Find your account";
-  static const String notificationsForSecurity = "You may receive Mobile notifications for security and login purposes";
+  static const String notificationsForSecurity =
+      "You may receive Mobile notifications for security and login purposes";
   static const String send = "Send";
   static const String codeVerification = "Code verification";
   static const String enterYourCode = "Enter your code";
@@ -31,7 +32,8 @@ abstract class AppStrings {
   static const String newPassword = "New Password";
   static const String confirmNewPassword = "Confirm New Password";
   static const String confirm = "Confirm";
-  static const String passwordChangedSuccessfully = "The password has been changed successfully";
+  static const String passwordChangedSuccessfully =
+      "The password has been changed successfully";
   static const String toHome = "To Home";
   static const String createNewAccount = "Create new account";
   static const String name = "Name";
@@ -42,5 +44,5 @@ abstract class AppStrings {
   static const String passwordDoNotMatch = "Password do not match";
   static const String congrats = "Congrats!";
   static const String accountCreated = "Your account has been created";
+  static const String unableToLogin = "Unable to Log in, please try again";
 }
-

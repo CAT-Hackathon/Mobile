@@ -12,20 +12,22 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CutsomAuthScaffold(
-      widget: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const LoginViewForm(),
-          32.verticalSpace,
-          AnotherJoinUsSection(
-            anotherMethode: AppStrings.orSignupWith,
-            joinMethodTxt: AppStrings.signup,
-            dontOrAlreadyTxt: AppStrings.dontHaveAnAccount,
-            onJoinMethodTap: () => AppRoutes.signUp.push(),
-          ),
-        ],
-      ).paddingHorizontal(16),
+    return CustomAuthScaffold(
+      widget: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const LoginViewForm(),
+            32.verticalSpace,
+            AnotherJoinUsSection(
+              anotherMethode: AppStrings.orSignupWith,
+              joinMethodTxt: AppStrings.signup,
+              dontOrAlreadyTxt: AppStrings.dontHaveAnAccount,
+              onJoinMethodTap: () => AppRoutes.signUp.push(),
+            ),
+          ],
+        ).paddingHorizontal(16),
+      ),
     );
   }
 }

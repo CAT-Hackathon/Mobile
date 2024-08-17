@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:met2ashara_app/core/router/page_transition.dart';
 import 'package:met2ashara_app/core/utils/extensions/widget_extensions.dart';
+import 'package:met2ashara_app/features/auth/presentation/views/code_verification_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/forgot_password_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/login_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/sign_up_view.dart';
@@ -46,6 +47,12 @@ class RouteConfigs {
         name: AppRoutes.signUp.name,
         pageBuilder: (context, state) =>
             const SignUpView().buildPage(transition: PageTransitions.cupertino),
+      ),
+      GoRoute(
+        path: AppRoutes.verification.path,
+        name: AppRoutes.verification.name,
+        pageBuilder: (context, state) => const CodeVerificationView()
+            .buildPage(transition: PageTransitions.fade),
       ),
     ],
   );

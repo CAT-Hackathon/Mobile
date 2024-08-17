@@ -6,6 +6,6 @@ class ForgotPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CutsomAuthScaffold(widget: SizedBox());
+    return CustomAuthScaffold(appBar: true, widget: SizedBox());
   }
 }
