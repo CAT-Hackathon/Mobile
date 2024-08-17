@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:met2ashara_app/core/theme/app_pallete.dart';
 import 'package:met2ashara_app/core/theme/styles.dart';
 import 'package:met2ashara_app/core/utils/assets/images.dart';
@@ -22,9 +23,9 @@ class AnotherJoinUsSection extends StatefulWidget {
 
 class _AnotherJoinUsSectionState extends State<AnotherJoinUsSection> {
   List<String> socialIcons = [
-    Assets.imagesAppleIcon,
-    Assets.imagesGoogleIcon,
-    Assets.imagesFacebookIcon
+    Assets.iconsApple,
+    Assets.iconsGoogle,
+    Assets.iconsFacebook
   ];
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class _AnotherJoinUsSectionState extends State<AnotherJoinUsSection> {
         Wrap(
           spacing: 56.w,
           children: List.generate(socialIcons.length, (index) {
-            return Image.asset(socialIcons[index]);
+            return SvgPicture.asset(socialIcons[index]);
           }),
         ),
         33.verticalSpace,

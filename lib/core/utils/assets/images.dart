@@ -13,13 +13,97 @@ class Assets {
   /// assets/icons/appLogo.svg
   static const String iconsAppLogo = "assets/icons/appLogo.svg";
 
+  /// Assets for iconsApple
+  /// assets/icons/apple.svg
+  static const String iconsApple = "assets/icons/apple.svg";
+
+  /// Assets for iconsArrowRight
+  /// assets/icons/arrowRight.svg
+  static const String iconsArrowRight = "assets/icons/arrowRight.svg";
+
+  /// Assets for iconsBecomeMentor
+  /// assets/icons/becomeMentor.svg
+  static const String iconsBecomeMentor = "assets/icons/becomeMentor.svg";
+
+  /// Assets for iconsCalender
+  /// assets/icons/calender.svg
+  static const String iconsCalender = "assets/icons/calender.svg";
+
+  /// Assets for iconsChat
+  /// assets/icons/chat.svg
+  static const String iconsChat = "assets/icons/chat.svg";
+
   /// Assets for iconsCodeVerification
   /// assets/icons/codeVerification.svg
   static const String iconsCodeVerification = "assets/icons/codeVerification.svg";
 
+  /// Assets for iconsCompanies
+  /// assets/icons/companies.svg
+  static const String iconsCompanies = "assets/icons/companies.svg";
+
+  /// Assets for iconsCompanyTest
+  /// assets/icons/companyTest.svg
+  static const String iconsCompanyTest = "assets/icons/companyTest.svg";
+
+  /// Assets for iconsCongrates
+  /// assets/icons/congrates.svg
+  static const String iconsCongrates = "assets/icons/congrates.svg";
+
+  /// Assets for iconsCv
+  /// assets/icons/cv.svg
+  static const String iconsCv = "assets/icons/cv.svg";
+
+  /// Assets for iconsDone
+  /// assets/icons/done.svg
+  static const String iconsDone = "assets/icons/done.svg";
+
+  /// Assets for iconsEdit
+  /// assets/icons/edit.svg
+  static const String iconsEdit = "assets/icons/edit.svg";
+
+  /// Assets for iconsFacebook
+  /// assets/icons/facebook.svg
+  static const String iconsFacebook = "assets/icons/facebook.svg";
+
+  /// Assets for iconsGoogle
+  /// assets/icons/google.svg
+  static const String iconsGoogle = "assets/icons/google.svg";
+
   /// Assets for iconsLockPasswordIcon
   /// assets/icons/Lock_Password_Icon.svg
   static const String iconsLockPasswordIcon = "assets/icons/Lock_Password_Icon.svg";
+
+  /// Assets for iconsMentors
+  /// assets/icons/mentors.svg
+  static const String iconsMentors = "assets/icons/mentors.svg";
+
+  /// Assets for iconsNoJobs
+  /// assets/icons/noJobs.svg
+  static const String iconsNoJobs = "assets/icons/noJobs.svg";
+
+  /// Assets for iconsNotAllowed
+  /// assets/icons/notAllowed.svg
+  static const String iconsNotAllowed = "assets/icons/notAllowed.svg";
+
+  /// Assets for iconsNotification
+  /// assets/icons/notification.svg
+  static const String iconsNotification = "assets/icons/notification.svg";
+
+  /// Assets for iconsOnBoarding1
+  /// assets/icons/onBoarding1.svg
+  static const String iconsOnBoarding1 = "assets/icons/onBoarding1.svg";
+
+  /// Assets for iconsOnBoarding2
+  /// assets/icons/onBoarding2.svg
+  static const String iconsOnBoarding2 = "assets/icons/onBoarding2.svg";
+
+  /// Assets for iconsOnBoarding3
+  /// assets/icons/onBoarding3.svg
+  static const String iconsOnBoarding3 = "assets/icons/onBoarding3.svg";
+
+  /// Assets for iconsPayment
+  /// assets/icons/payment.svg
+  static const String iconsPayment = "assets/icons/payment.svg";
 
   /// Assets for iconsPerson
   /// assets/icons/person.svg
@@ -29,96 +113,12 @@ class Assets {
   /// assets/icons/Phone_Icon.svg
   static const String iconsPhoneIcon = "assets/icons/Phone_Icon.svg";
 
-  /// Assets for imagesAppleIcon
-  /// assets/images/apple_icon.png
-  static const String imagesAppleIcon = "assets/images/apple_icon.png";
+  /// Assets for iconsProfileImageTest
+  /// assets/icons/profileImageTest.svg
+  static const String iconsProfileImageTest = "assets/icons/profileImageTest.svg";
 
-  /// Assets for imagesCodeVerification
-  /// assets/images/code_verification.png
-  static const String imagesCodeVerification = "assets/images/code_verification.png";
-
-  /// Assets for imagesCompanies
-  /// assets/images/companies.png
-  static const String imagesCompanies = "assets/images/companies.png";
-
-  /// Assets for imagesCompanyExampleLogo
-  /// assets/images/company_example_logo.png
-  static const String imagesCompanyExampleLogo = "assets/images/company_example_logo.png";
-
-  /// Assets for imagesCongrats
-  /// assets/images/congrats.png
-  static const String imagesCongrats = "assets/images/congrats.png";
-
-  /// Assets for imagesCv
-  /// assets/images/cv.png
-  static const String imagesCv = "assets/images/cv.png";
-
-  /// Assets for imagesFacebookIcon
-  /// assets/images/facebook_icon.png
-  static const String imagesFacebookIcon = "assets/images/facebook_icon.png";
-
-  /// Assets for imagesGoogleIcon
-  /// assets/images/google_icon.png
-  static const String imagesGoogleIcon = "assets/images/google_icon.png";
-
-  /// Assets for imagesHome
-  /// assets/images/home.png
-  static const String imagesHome = "assets/images/home.png";
-
-  /// Assets for imagesHomeActive
-  /// assets/images/home_active.png
-  static const String imagesHomeActive = "assets/images/home_active.png";
-
-  /// Assets for imagesMentors
-  /// assets/images/mentors.png
-  static const String imagesMentors = "assets/images/mentors.png";
-
-  /// Assets for imagesNoJobs
-  /// assets/images/no_jobs.png
-  static const String imagesNoJobs = "assets/images/no_jobs.png";
-
-  /// Assets for imagesNoSalary
-  /// assets/images/no_salary.png
-  static const String imagesNoSalary = "assets/images/no_salary.png";
-
-  /// Assets for imagesNotAllowed
-  /// assets/images/not_allowed.png
-  static const String imagesNotAllowed = "assets/images/not_allowed.png";
-
-  /// Assets for imagesOnBoarding1
-  /// assets/images/on_boarding1.png
-  static const String imagesOnBoarding1 = "assets/images/on_boarding1.png";
-
-  /// Assets for imagesOnBoarding2
-  /// assets/images/on_boarding2.png
-  static const String imagesOnBoarding2 = "assets/images/on_boarding2.png";
-
-  /// Assets for imagesOnBoarding3
-  /// assets/images/on_boarding3.png
-  static const String imagesOnBoarding3 = "assets/images/on_boarding3.png";
-
-  /// Assets for imagesProfile
-  /// assets/images/profile.png
-  static const String imagesProfile = "assets/images/profile.png";
-
-  /// Assets for imagesReciveRequest
-  /// assets/images/recive_request.png
-  static const String imagesReciveRequest = "assets/images/recive_request.png";
-
-  /// Assets for imagesResume
-  /// assets/images/resume.png
-  static const String imagesResume = "assets/images/resume.png";
-
-  /// Assets for imagesSearch
-  /// assets/images/search.png
-  static const String imagesSearch = "assets/images/search.png";
-
-  /// Assets for imagesSearchActive
-  /// assets/images/search_active.png
-  static const String imagesSearchActive = "assets/images/search_active.png";
-
-  /// Assets for imagesSuccessfull
-  /// assets/images/successfull.png
-  static const String imagesSuccessfull = "assets/images/successfull.png";
+  /// Assets for iconsSettings
+  /// assets/icons/settings.svg
+  static const String iconsSettings = "assets/icons/settings.svg";
 }
 

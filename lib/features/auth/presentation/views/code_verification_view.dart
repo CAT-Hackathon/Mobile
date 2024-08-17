@@ -6,6 +6,7 @@ import 'package:met2ashara_app/core/theme/styles.dart';
 import 'package:met2ashara_app/core/utils/assets/images.dart';
 import 'package:met2ashara_app/core/utils/extensions/widget_extensions.dart';
 import 'package:met2ashara_app/core/utils/strings.dart';
+import 'package:met2ashara_app/core/utils/widgets/custom_dialog.dart';
 import 'package:met2ashara_app/core/utils/widgets/custom_otp_feild.dart';
 import 'package:met2ashara_app/core/utils/widgets/cutsom_button.dart';
 import 'package:met2ashara_app/features/auth/presentation/widgets/cutsom_auth_scaffold.dart';
@@ -32,7 +33,17 @@ class CodeVerificationView extends StatelessWidget {
                 length: 5,
               ),
               32.verticalSpace,
-              const CustomButton(text: AppStrings.continueText),
+              CustomButton(
+                text: AppStrings.continueText,
+                onPressed: () {
+                  showCustomDialog(
+                    context: context,
+                    subTitle: AppStrings.didntReceiveCode,
+                    btnText: AppStrings.resendTheCode,
+                    onPressed: () => Navigator.pop(context),
+                  );
+                },
+              ),
               16.verticalSpace,
               TextButton(
                   onPressed: () {},

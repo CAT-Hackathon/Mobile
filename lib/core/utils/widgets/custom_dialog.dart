@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:met2ashara_app/core/theme/app_pallete.dart';
 import 'package:met2ashara_app/core/theme/styles.dart';
-import 'package:met2ashara_app/core/utils/strings.dart';
 import 'package:met2ashara_app/core/utils/widgets/cutsom_button.dart';
 
 void showCustomDialog({
   required BuildContext context,
-  required String title,
+  String? title,
   String? subTitle,
+  String? btnText,
+  void Function()? onPressed,
 }) {
   showDialog(
     context: context,
@@ -28,7 +29,7 @@ void showCustomDialog({
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                title,
+                title ?? "",
                 style: Styles.roboto600(
                   fontSize: 22,
                   color: AppPalette.errorColor,
@@ -44,12 +45,12 @@ void showCustomDialog({
                 textAlign: TextAlign.center,
               ),
               16.verticalSpace,
-              CustomButton(
-                text: AppStrings.tryAgain,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
+              btnText != null
+                  ? CustomButton(
+                      text: btnText,
+                      onPressed: onPressed,
+                    )
+                  : const SizedBox(),
             ],
           ),
         ),

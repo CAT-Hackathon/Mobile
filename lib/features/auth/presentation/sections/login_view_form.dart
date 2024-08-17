@@ -7,6 +7,7 @@ import 'package:met2ashara_app/core/theme/app_pallete.dart';
 import 'package:met2ashara_app/core/theme/styles.dart';
 import 'package:met2ashara_app/core/utils/assets/images.dart';
 import 'package:met2ashara_app/core/utils/strings.dart';
+import 'package:met2ashara_app/core/utils/widgets/custom_dialog.dart';
 import 'package:met2ashara_app/core/utils/widgets/cutsom_button.dart';
 import 'package:met2ashara_app/core/utils/widgets/cutsom_txt_form_feild.dart';
 
@@ -102,7 +103,13 @@ class _LoginViewFormState extends State<LoginViewForm> {
           CustomButton(
             text: AppStrings.login,
             onPressed: () {
-              AppRoutes.verification.push();
+              showCustomDialog(
+                context: context,
+                title: AppStrings.opps,
+                subTitle: AppStrings.unableToLogin,
+                btnText: AppStrings.tryAgain,
+                onPressed: () => AppRoutes.verification.push(),
+              );
             },
           ),
         ],

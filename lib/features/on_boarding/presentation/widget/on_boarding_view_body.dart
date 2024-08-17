@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:met2ashara_app/core/theme/app_pallete.dart';
 import 'package:met2ashara_app/core/utils/extensions/widget_extensions.dart';
 import 'package:met2ashara_app/features/on_boarding/data/model/on_boarding_model.dart';
@@ -29,7 +30,7 @@ class OnBoardingViewBody extends StatelessWidget {
                     CustomPaint(
                       painter: onBoardingData[index].painter,
                       child: Center(
-                          child: Image.asset(onBoardingData[index].imagePath)),
+                          child: SvgPicture.asset(onBoardingData[index].imagePath)),
                     ),
                     index == 0
                         ? const SizedBox()
