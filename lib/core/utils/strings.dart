@@ -45,4 +45,5 @@ abstract class AppStrings {
   static const String congrats = "Congrats!";
   static const String accountCreated = "Your account has been created";
   static const String unableToLogin = "Unable to Log in, please try again";
+  static const String youMayReceiveMobileNotification = "You may receive Mobile notifications for security and login purposes";
 }

@@ -44,10 +44,12 @@ class CustomTextFormField extends StatelessWidget {
         hintStyle: Styles.roboto400(fontSize: 14),
         labelText: labelText,
         labelStyle: Styles.roboto400(fontSize: 14),
-        prefixIcon: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: prefixIcon,
-        ),
+        prefixIcon: prefixIcon != null
+            ? Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: prefixIcon,
+              )
+            : null,
       ),
     );
   }
