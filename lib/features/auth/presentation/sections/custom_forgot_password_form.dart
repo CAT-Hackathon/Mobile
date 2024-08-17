@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:met2ashara_app/core/functions/validators.dart';
+import 'package:met2ashara_app/core/router/route_names.dart';
 import 'package:met2ashara_app/core/theme/styles.dart';
 import 'package:met2ashara_app/core/utils/strings.dart';
 import 'package:met2ashara_app/core/utils/widgets/cutsom_button.dart';
@@ -45,7 +46,9 @@ class _CustomForgotPasswordFormState extends State<CustomForgotPasswordForm> {
           32.verticalSpace,
           CustomButton(
             text: AppStrings.send,
-            onPressed: () {},
+            onPressed: () {
+              AppRoutes.resetPassword.push();
+            },
           )
         ],
       ),

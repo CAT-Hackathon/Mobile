@@ -5,6 +5,7 @@ import 'package:met2ashara_app/core/utils/extensions/widget_extensions.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/code_verification_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/forgot_password_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/login_view.dart';
+import 'package:met2ashara_app/features/auth/presentation/views/reset_password_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:met2ashara_app/features/on_boarding/presentation/view/on_boarding_view.dart';
 import 'package:met2ashara_app/features/splash/presentation/views/splash_view.dart';
@@ -53,6 +54,12 @@ class RouteConfigs {
         name: AppRoutes.verification.name,
         pageBuilder: (context, state) => const CodeVerificationView()
             .buildPage(transition: PageTransitions.fade),
+      ),
+      GoRoute(
+        path: AppRoutes.resetPassword.path,
+        name: AppRoutes.resetPassword.name,
+        pageBuilder: (context, state) => const ResetPasswordView()
+            .buildPage(transition: PageTransitions.cupertino),
       ),
     ],
   );

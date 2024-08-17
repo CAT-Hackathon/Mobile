@@ -14,6 +14,7 @@ class AppRoutes extends AppRoute {
 
   // forget password routes
   static const forgetPassword = AppRoute('forgetPassword', '/forget-password');
+  static const resetPassword = AppRoute('resetPassword', '/resetPassword');
 
   // bottomNavBar
   static const bottomNavBar = AppRoute('bottomNavBar', '/bottomNavBar');
