@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:met2ashara_app/core/router/route_names.dart';
 import 'package:met2ashara_app/core/theme/app_pallete.dart';
 import 'package:met2ashara_app/core/theme/styles.dart';
 import 'package:met2ashara_app/core/utils/assets/images.dart';
@@ -36,17 +37,19 @@ class CodeVerificationView extends StatelessWidget {
               CustomButton(
                 text: AppStrings.continueText,
                 onPressed: () {
-                  showCustomDialog(
-                    context: context,
-                    subTitle: AppStrings.didntReceiveCode,
-                    btnText: AppStrings.resendTheCode,
-                    onPressed: () => Navigator.pop(context),
-                  );
+                  AppRoutes.mainView.pushReplacement();
                 },
               ),
               16.verticalSpace,
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showCustomDialog(
+                      context: context,
+                      subTitle: AppStrings.didntReceiveCode,
+                      btnText: AppStrings.resendTheCode,
+                      onPressed: () => Navigator.pop(context),
+                    );
+                  },
                   child: Text(
                     AppStrings.didntReceiveCode,
                     style: Styles.roboto700(

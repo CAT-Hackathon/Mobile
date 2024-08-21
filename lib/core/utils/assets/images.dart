@@ -65,9 +65,33 @@ class Assets {
   /// assets/icons/facebook.svg
   static const String iconsFacebook = "assets/icons/facebook.svg";
 
+  /// Assets for iconsFilter
+  /// assets/icons/filter.svg
+  static const String iconsFilter = "assets/icons/filter.svg";
+
   /// Assets for iconsGoogle
   /// assets/icons/google.svg
   static const String iconsGoogle = "assets/icons/google.svg";
+
+  /// Assets for iconsHome
+  /// assets/icons/home.svg
+  static const String iconsHome = "assets/icons/home.svg";
+
+  /// Assets for iconsHomeInActive
+  /// assets/icons/homeInActive.svg
+  static const String iconsHomeInActive = "assets/icons/homeInActive.svg";
+
+  /// Assets for iconsLearning
+  /// assets/icons/learning.svg
+  static const String iconsLearning = "assets/icons/learning.svg";
+
+  /// Assets for iconsLearningInActive
+  /// assets/icons/learningInActive.svg
+  static const String iconsLearningInActive = "assets/icons/learningInActive.svg";
+
+  /// Assets for iconsLocation
+  /// assets/icons/location.svg
+  static const String iconsLocation = "assets/icons/location.svg";
 
   /// Assets for iconsLockPasswordIcon
   /// assets/icons/Lock_Password_Icon.svg
@@ -113,9 +137,29 @@ class Assets {
   /// assets/icons/Phone_Icon.svg
   static const String iconsPhoneIcon = "assets/icons/Phone_Icon.svg";
 
+  /// Assets for iconsProfile
+  /// assets/icons/profile.svg
+  static const String iconsProfile = "assets/icons/profile.svg";
+
   /// Assets for iconsProfileImageTest
   /// assets/icons/profileImageTest.svg
   static const String iconsProfileImageTest = "assets/icons/profileImageTest.svg";
+
+  /// Assets for iconsProfileInActive
+  /// assets/icons/profileInActive.svg
+  static const String iconsProfileInActive = "assets/icons/profileInActive.svg";
+
+  /// Assets for iconsSeachTextFeild
+  /// assets/icons/seachTextFeild.svg
+  static const String iconsSeachTextFeild = "assets/icons/seachTextFeild.svg";
+
+  /// Assets for iconsSearch
+  /// assets/icons/search.svg
+  static const String iconsSearch = "assets/icons/search.svg";
+
+  /// Assets for iconsSearchInActive
+  /// assets/icons/searchInActive.svg
+  static const String iconsSearchInActive = "assets/icons/searchInActive.svg";
 
   /// Assets for iconsSettings
   /// assets/icons/settings.svg

@@ -7,6 +7,7 @@ import 'package:met2ashara_app/features/auth/presentation/views/forgot_password_
 import 'package:met2ashara_app/features/auth/presentation/views/login_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/reset_password_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/sign_up_view.dart';
+import 'package:met2ashara_app/features/main_view.dart';
 import 'package:met2ashara_app/features/on_boarding/presentation/view/on_boarding_view.dart';
 import 'package:met2ashara_app/features/splash/presentation/views/splash_view.dart';
 
@@ -60,6 +61,12 @@ class RouteConfigs {
         name: AppRoutes.resetPassword.name,
         pageBuilder: (context, state) => const ResetPasswordView()
             .buildPage(transition: PageTransitions.cupertino),
+      ),
+      GoRoute(
+        path: AppRoutes.mainView.path,
+        name: AppRoutes.mainView.name,
+        pageBuilder: (context, state) =>
+            const MainView().buildPage(transition: PageTransitions.cupertino),
       ),
     ],
   );

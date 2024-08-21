@@ -45,8 +45,17 @@ abstract class AppStrings {
   static const String congrats = "Congrats!";
   static const String accountCreated = "Your account has been created";
   static const String unableToLogin = "Unable to Log in, please try again";
+  static const String search = "Search ..";
   static const String youMayReceiveMobileNotification =
       "You may receive Mobile notifications for security and login purposes";
   static const String createNewPasswordRoles =
       "The password must include a mix of letters and numbers, with preference for uppercase and lowercase letters, numbers, and special symbols for increased security. It should be at least 8 characters long.";
+  static const String location = "Location";
+  static const String companies = "Companies";
+  static const String mentors = "Mentors";
+  static const String topCompany = "Top Company";
+  static const String topMentor = "Top Mentor";
+  static const String viewAll = "View all";
+  
+
 }
