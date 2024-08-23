@@ -11,8 +11,11 @@ class SliderModel {
 }
 
 List<SliderModel> sliderImages = [
-  SliderModel(imagePath: Assets.iconsCompanies, imageText: "hhhhhhhhhhh"),
-  SliderModel(imagePath: Assets.iconsCompanies),
-  SliderModel(imagePath: Assets.iconsCompanies),
-  SliderModel(imagePath: Assets.iconsCompanies),
+  SliderModel(
+      imagePath: Assets.imagesSlider,
+      imageText:
+          '"Create your CV now, take pride in your achievements, and start your professional journey!"'),
+  SliderModel(imagePath: Assets.imagesSlider),
+  SliderModel(imagePath: Assets.imagesSlider),
+  SliderModel(imagePath: Assets.imagesSlider),
 ];

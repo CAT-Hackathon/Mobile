@@ -25,7 +25,6 @@ class _CustomHomeSliderState extends State<CustomHomeSlider> {
         return sliderWidget(index);
       },
       options: CarouselOptions(
-        aspectRatio: 16 / 9,
         viewportFraction: 0.8,
         initialPage: 0,
         height: 112.h,

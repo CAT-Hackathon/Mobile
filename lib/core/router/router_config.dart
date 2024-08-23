@@ -7,6 +7,8 @@ import 'package:met2ashara_app/features/auth/presentation/views/forgot_password_
 import 'package:met2ashara_app/features/auth/presentation/views/login_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/reset_password_view.dart';
 import 'package:met2ashara_app/features/auth/presentation/views/sign_up_view.dart';
+import 'package:met2ashara_app/features/home/presentation/views/companies_view.dart';
+import 'package:met2ashara_app/features/home/presentation/views/mentors_view.dart';
 import 'package:met2ashara_app/features/main_view.dart';
 import 'package:met2ashara_app/features/on_boarding/presentation/view/on_boarding_view.dart';
 import 'package:met2ashara_app/features/splash/presentation/views/splash_view.dart';
@@ -18,6 +20,7 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 class RouteConfigs {
   // All Routes in the app
   static final GoRouter routerConfig = GoRouter(
+    initialLocation: AppRoutes.mainView.path,
     debugLogDiagnostics: true,
     navigatorKey: rootNavigatorKey,
     routes: [
@@ -67,6 +70,18 @@ class RouteConfigs {
         name: AppRoutes.mainView.name,
         pageBuilder: (context, state) =>
             const MainView().buildPage(transition: PageTransitions.cupertino),
+      ),
+      GoRoute(
+        path: AppRoutes.companiesView.path,
+        name: AppRoutes.companiesView.name,
+        pageBuilder: (context, state) => const CompaniesView()
+            .buildPage(transition: PageTransitions.cupertino),
+      ),
+      GoRoute(
+        path: AppRoutes.mentorsView.path,
+        name: AppRoutes.mentorsView.name,
+        pageBuilder: (context, state) => const MentorsView()
+            .buildPage(transition: PageTransitions.cupertino),
       ),
     ],
   );

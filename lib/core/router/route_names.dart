@@ -18,6 +18,10 @@ class AppRoutes extends AppRoute {
 
   // bottomNavBar
   static const mainView = AppRoute('mainView', '/mainView');
+  static const companiesView = AppRoute('companiesView', '/companiesView');
+  static const mentorsView = AppRoute('mentorsView', '/mentorsView');
+  static const companyDetailsView = AppRoute('companyDetailsView', '/companyDetailsView');
+  static const mentorDetailsView = AppRoute('mentorDetailsView', '/mentorDetailsView');
 }
 
 class AppRoute {

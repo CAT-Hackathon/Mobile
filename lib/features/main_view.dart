@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:met2ashara_app/core/theme/app_pallete.dart';
 import 'package:met2ashara_app/core/utils/assets/images.dart';
@@ -37,13 +38,19 @@ class _MainViewState extends State<MainView> {
             height: 58,
             items: <Widget>[
               _pageIndex == 0
-                  ? SvgPicture.asset(Assets.iconsHomeInActive)
+                  ? SvgPicture.asset(
+                      Assets.iconsHomeInActive,
+                      height: 20.h,
+                    )
                   : SvgPicture.asset(Assets.iconsHome),
               _pageIndex == 1
                   ? SvgPicture.asset(Assets.iconsSearchInActive)
                   : SvgPicture.asset(Assets.iconsSearch),
               _pageIndex == 2
-                  ? SvgPicture.asset(Assets.iconsLearningInActive)
+                  ? SvgPicture.asset(
+                      Assets.iconsLearningInActive,
+                      height: 20.h,
+                    )
                   : SvgPicture.asset(Assets.iconsLearning),
               _pageIndex == 3
                   ? SvgPicture.asset(Assets.iconsProfileInActive)

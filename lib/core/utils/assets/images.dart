@@ -1,3 +1,4 @@
+// ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
   
@@ -41,9 +42,9 @@ class Assets {
   /// assets/icons/companies.svg
   static const String iconsCompanies = "assets/icons/companies.svg";
 
-  /// Assets for iconsCompanyTest
-  /// assets/icons/companyTest.svg
-  static const String iconsCompanyTest = "assets/icons/companyTest.svg";
+  /// Assets for iconsCompanyPerson
+  /// assets/icons/companyPerson.svg
+  static const String iconsCompanyPerson = "assets/icons/companyPerson.svg";
 
   /// Assets for iconsCongrates
   /// assets/icons/congrates.svg
@@ -60,6 +61,10 @@ class Assets {
   /// Assets for iconsEdit
   /// assets/icons/edit.svg
   static const String iconsEdit = "assets/icons/edit.svg";
+
+  /// Assets for iconsEye
+  /// assets/icons/eye.svg
+  static const String iconsEye = "assets/icons/eye.svg";
 
   /// Assets for iconsFacebook
   /// assets/icons/facebook.svg
@@ -141,13 +146,13 @@ class Assets {
   /// assets/icons/profile.svg
   static const String iconsProfile = "assets/icons/profile.svg";
 
-  /// Assets for iconsProfileImageTest
-  /// assets/icons/profileImageTest.svg
-  static const String iconsProfileImageTest = "assets/icons/profileImageTest.svg";
-
   /// Assets for iconsProfileInActive
   /// assets/icons/profileInActive.svg
   static const String iconsProfileInActive = "assets/icons/profileInActive.svg";
+
+  /// Assets for iconsResume
+  /// assets/icons/resume.svg
+  static const String iconsResume = "assets/icons/resume.svg";
 
   /// Assets for iconsSeachTextFeild
   /// assets/icons/seachTextFeild.svg
@@ -164,5 +169,25 @@ class Assets {
   /// Assets for iconsSettings
   /// assets/icons/settings.svg
   static const String iconsSettings = "assets/icons/settings.svg";
+
+  /// Assets for imagesCompanyImage
+  /// assets/images/companyImage.png
+  static const String imagesCompanyImage = "assets/images/companyImage.png";
+
+  /// Assets for imagesCompanyImageTest
+  /// assets/images/companyImageTest.png
+  static const String imagesCompanyImageTest = "assets/images/companyImageTest.png";
+
+  /// Assets for imagesMentorImage
+  /// assets/images/mentorImage.png
+  static const String imagesMentorImage = "assets/images/mentorImage.png";
+
+  /// Assets for imagesPersonImageTest
+  /// assets/images/personImageTest.png
+  static const String imagesPersonImageTest = "assets/images/personImageTest.png";
+
+  /// Assets for imagesSlider
+  /// assets/images/slider.png
+  static const String imagesSlider = "assets/images/slider.png";
 }
 

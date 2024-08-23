@@ -7,12 +7,10 @@ import 'package:met2ashara_app/core/utils/assets/images.dart';
 import 'package:met2ashara_app/core/utils/extensions/widget_extensions.dart';
 import 'package:met2ashara_app/core/utils/strings.dart';
 
-class CustomHomeAppBar extends StatelessWidget {
-  const CustomHomeAppBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
+PreferredSize homeAppBar() {
+  return PreferredSize(
+    preferredSize: Size.fromHeight(100.h),
+    child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Column(
@@ -22,9 +20,11 @@ class CustomHomeAppBar extends StatelessWidget {
               AppStrings.location,
               style: Styles.roboto400(fontSize: 12),
             ),
+            4.verticalSpace,
             Row(
               children: [
                 SvgPicture.asset(Assets.iconsLocation),
+                4.horizontalSpace,
                 Text(
                   'Egypt , Mansoura',
                   style:
@@ -42,6 +42,6 @@ class CustomHomeAppBar extends StatelessWidget {
           ],
         )
       ],
-    ).paddingAll(16);
-  }
+    ).paddingAll(16),
+  );
 }
