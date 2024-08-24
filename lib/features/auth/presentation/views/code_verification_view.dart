@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:met2ashara_app/core/router/route_names.dart';
 import 'package:met2ashara_app/core/theme/app_pallete.dart';
 import 'package:met2ashara_app/core/theme/styles.dart';

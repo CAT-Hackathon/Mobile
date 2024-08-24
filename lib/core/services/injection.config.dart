@@ -21,6 +21,12 @@ import '../../features/auth/data/repository_impl/auth_repository_impl.dart'
 import '../../features/auth/domain/repository/auth_repository.dart' as _i961;
 import '../../features/auth/presentation/controller/auth_cubit/auth_cubit.dart'
     as _i20;
+import '../../features/home/data/datasources/home_datasource.dart' as _i1055;
+import '../../features/home/data/repository_impl/home_repository_impl.dart'
+    as _i60;
+import '../../features/home/domain/repository/home_repository.dart' as _i541;
+import '../../features/home/presentation/controller/cubit/home_cubit.dart'
+    as _i985;
 import '../../features/shared/controller/connectivity_cubit/connectivity_cubit.dart'
     as _i1020;
 import '../../features/splash/data/repository/splash_repository.dart' as _i478;
@@ -62,12 +68,20 @@ Future<_i174.GetIt> $initGetIt(
       () => _i478.SplashRepositoryImpl(gh<_i738.LocalDataSource>()));
   gh.factory<_i1020.ConnectivityCubit>(
       () => _i1020.ConnectivityCubit(connectivity: gh<_i895.Connectivity>()));
+  gh.lazySingleton<_i1055.HomeDatasource>(
+      () => _i1055.HomeDataSourceImpl(gh<_i340.ApiClient>()));
   gh.lazySingleton<_i161.AuthRemoteDatasource>(
       () => _i161.AuthRemoteDataSourceImpl(gh<_i340.ApiClient>()));
   gh.factory<_i412.SplashCubit>(
       () => _i412.SplashCubit(gh<_i478.SplashRepository>()));
-  gh.lazySingleton<_i961.AuthRepository>(
-      () => _i954.AuthRepositoryImpl(gh<_i161.AuthRemoteDatasource>()));
+  gh.lazySingleton<_i541.HomeRepository>(
+      () => _i60.HomeRepositoryImpl(gh<_i1055.HomeDatasource>()));
+  gh.lazySingleton<_i961.AuthRepository>(() => _i954.AuthRepositoryImpl(
+        gh<_i161.AuthRemoteDatasource>(),
+        gh<_i738.LocalDataSource>(),
+      ));
+  gh.factory<_i985.HomeCubit>(
+      () => _i985.HomeCubit(gh<_i541.HomeRepository>()));
   gh.lazySingleton<_i20.AuthCubit>(
       () => _i20.AuthCubit(gh<_i961.AuthRepository>()));
   return getIt;

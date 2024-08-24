@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -18,6 +20,7 @@ class SplashCubit extends Cubit<SplashState> {
   void _getData() async {
     emit(state.copyWith(status: CubitStatus.loading));
     final authModel = _repository.getAuthData();
+    log(authModel!.user.phone);
     emit(state.copyWith(authModel: authModel, status: CubitStatus.success));
   }
 }

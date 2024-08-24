@@ -8,6 +8,7 @@ import 'package:met2ashara_app/core/router/router_config.dart';
 import 'package:met2ashara_app/core/services/injection.dart';
 import 'package:met2ashara_app/core/theme/theme.dart';
 import 'package:met2ashara_app/features/auth/presentation/controller/auth_cubit/auth_cubit.dart';
+import 'package:met2ashara_app/features/home/presentation/controller/cubit/home_cubit.dart';
 import 'package:met2ashara_app/features/splash/presentation/controller/splash_cubit.dart';
 
 void main() async {
@@ -18,8 +19,8 @@ void main() async {
   Future.wait([
     ScreenUtil.ensureScreenSize(),
     configureInjection(),
-  ]);
-  runApp(const Met2asharaApp());
+  ]).then((value) => runApp(const Met2asharaApp()));
+  
 }
 
 class Met2asharaApp extends StatelessWidget {
@@ -36,6 +37,7 @@ class Met2asharaApp extends StatelessWidget {
             providers:[
             BlocProvider(create: (context) => sl<AuthCubit>(),),
             BlocProvider(create: (context) => sl<SplashCubit>(),),
+            BlocProvider(create: (context) => sl<HomeCubit>(),),
             ] ,
             child: MaterialApp.router(
               builder: BotToastInit(),

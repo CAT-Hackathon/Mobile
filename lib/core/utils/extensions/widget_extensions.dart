@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:met2ashara_app/core/router/page_transition.dart';
 import 'package:shimmer/shimmer.dart';
 
-
-extension WidgetExtensions on Widget
-{
+extension WidgetExtensions on Widget {
   Widget visible(bool visible, {Widget? fallback}) {
     return visible ? this : (fallback ?? const SizedBox.shrink());
   }
@@ -41,7 +39,8 @@ extension WidgetExtensions on Widget
 
   ClipRRect cornerRadiusWithClipRRectTop(double radius) {
     return ClipRRect(
-      borderRadius: BorderRadius.only(topLeft: Radius.circular(radius), topRight: Radius.circular(radius)),
+      borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(radius), topRight: Radius.circular(radius)),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: this,
     );
@@ -49,7 +48,9 @@ extension WidgetExtensions on Widget
 
   ClipRRect cornerRadiusWithClipRRectBottom(double radius) {
     return ClipRRect(
-      borderRadius: BorderRadius.only(bottomLeft: Radius.circular(radius), bottomRight: Radius.circular(radius)),
+      borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(radius),
+          bottomRight: Radius.circular(radius)),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: this,
     );
@@ -73,7 +74,8 @@ extension WidgetExtensions on Widget
       clipBehavior: Clip.antiAliasWithSaveLayer,
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: borderColor ?? Colors.transparent, width: borderWidth),
+          border: Border.all(
+              color: borderColor ?? Colors.transparent, width: borderWidth),
         ),
         child: this,
       ),
@@ -81,8 +83,12 @@ extension WidgetExtensions on Widget
   }
 
   /// set parent widget in center
-  Widget center({double? heightFactor, double? widthFactor, bool enabled = true}) {
-    return enabled ? Center(heightFactor: heightFactor, widthFactor: widthFactor, child: this) : this;
+  Widget center(
+      {double? heightFactor, double? widthFactor, bool enabled = true}) {
+    return enabled
+        ? Center(
+            heightFactor: heightFactor, widthFactor: widthFactor, child: this)
+        : this;
   }
 
   /// add tap to parent widget
@@ -105,13 +111,19 @@ extension WidgetExtensions on Widget
   }
 
   /// Wrap with ShaderMask widget
-  Widget withShaderMask(List<Color> colors, {BlendMode blendMode = BlendMode.srcATop}) {
-    return withShaderMaskGradient(LinearGradient(colors: colors), blendMode: blendMode);
+  Widget withShaderMask(List<Color> colors,
+      {BlendMode blendMode = BlendMode.srcATop}) {
+    return withShaderMaskGradient(LinearGradient(colors: colors),
+        blendMode: blendMode);
   }
 
   /// Wrap with ShaderMask widget Gradient
-  Widget withShaderMaskGradient(Gradient gradient, {BlendMode blendMode = BlendMode.srcATop}) {
-    return ShaderMask(shaderCallback: (rect) => gradient.createShader(rect), blendMode: blendMode, child: this);
+  Widget withShaderMaskGradient(Gradient gradient,
+      {BlendMode blendMode = BlendMode.srcATop}) {
+    return ShaderMask(
+        shaderCallback: (rect) => gradient.createShader(rect),
+        blendMode: blendMode,
+        child: this);
   }
 
   /// Validate given widget is not null and returns given value if null.
@@ -119,10 +131,130 @@ extension WidgetExtensions on Widget
 
   Widget buildWhen(bool value) => value ? this : const SizedBox.shrink();
 
-  Widget withTooltip({required String msg}) => Tooltip(message: msg, child: this);
+  Widget withTooltip({required String msg}) =>
+      Tooltip(message: msg, child: this);
 
-  Widget withSafeArea({EdgeInsets? minimum, bool top = true, bool bottom = true}) {
-    return SafeArea(minimum: minimum ?? EdgeInsets.zero, top: top, bottom: bottom, child: this);
+  Widget withSafeArea(
+      {EdgeInsets? minimum, bool top = true, bool bottom = true}) {
+    return SafeArea(
+        minimum: minimum ?? EdgeInsets.zero,
+        top: top,
+        bottom: bottom,
+        child: this);
+  }
+}
+
+extension RouterExtension on Widget {
+  /// Builds a page with optional transition and duration.
+  ///
+  /// - The [transition] parameter specifies the page transition animation to be used.
+  /// - The [duration] parameter specifies the duration of the transition animation.
+  ///
+  /// Returns a [Page] object representing the built page.
+  Page<dynamic> buildPage({PageTransitions? transition, Duration? duration}) {
+    if (transition != null && transition == PageTransitions.cupertino) {
+      return CupertinoPage<dynamic>(child: this);
+    } else {
+      return customTransitionPage(this, transition, duration);
+    }
+  }
+
+  Widget withBlocProvider<T extends Cubit<Object>>(T bloc) =>
+      BlocProvider<T>.value(value: bloc, child: this);
+}
+
+extension PaddingExtension on Widget {
+  /// return padding top
+  Padding paddingTop(double top) {
+    return Padding(padding: EdgeInsets.only(top: top), child: this);
+  }
+
+  /// return padding left
+  Padding paddingLeft(double left) {
+    return Padding(padding: EdgeInsets.only(left: left), child: this);
+  }
+
+  /// return padding Directional
+  Padding paddingStart(double start) {
+    return Padding(
+        padding: EdgeInsetsDirectional.only(start: start), child: this);
+  }
+
+  Padding paddingEnd(double end) {
+    return Padding(padding: EdgeInsetsDirectional.only(end: end), child: this);
+  }
+
+  /// return padding right
+  Padding paddingRight(double right) {
+    return Padding(padding: EdgeInsets.only(right: right), child: this);
+  }
+
+  /// return padding bottom
+  Padding paddingBottom(double bottom) {
+    return Padding(padding: EdgeInsets.only(bottom: bottom), child: this);
+  }
+
+  /// return padding all
+  Padding paddingAll(double padding) {
+    return Padding(padding: EdgeInsets.all(padding), child: this);
+  }
+
+  /// return padding Symmetric
+  Padding paddingSymmetric(double horizontal, double vertical) {
+    return Padding(
+        padding:
+            EdgeInsets.symmetric(vertical: vertical, horizontal: horizontal),
+        child: this);
+  }
+
+  Padding paddingVertical(double padding) {
+    return Padding(
+        padding: EdgeInsets.symmetric(vertical: padding), child: this);
+  }
+
+  Padding paddingHorizontal(double padding) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: padding), child: this);
+  }
+
+  /// return custom padding from each side
+  Padding paddingOnly(
+      {double top = 0.0,
+      double left = 0.0,
+      double bottom = 0.0,
+      double right = 0.0}) {
+    return Padding(
+        padding: EdgeInsets.fromLTRB(left, top, right, bottom), child: this);
+  }
+
+  Padding paddingDirectionalOnly(
+      {double top = 0.0,
+      double start = 0.0,
+      double bottom = 0.0,
+      double end = 0.0}) {
+    return Padding(
+        padding: EdgeInsetsDirectional.only(
+            top: top, bottom: bottom, start: start, end: end),
+        child: this);
+  }
+
+  Padding paddingDirectionalAll({double padding = 0}) {
+    return Padding(padding: EdgeInsetsDirectional.all(padding), child: this);
+  }
+
+  /// add FittedBox to parent widget
+  Widget fit({BoxFit? fit, AlignmentGeometry? alignment}) {
+    return FittedBox(
+        fit: fit ?? BoxFit.contain,
+        alignment: alignment ?? Alignment.center,
+        child: this);
+  }
+
+  /// add Flexible to parent widget
+  Widget flexible({flex = 1, FlexFit? fit, bool buildWhen = true}) {
+    return buildWhen
+        ? Flexible(flex: flex, fit: fit ?? FlexFit.loose, child: this)
+        : this;
   }
 
   Widget withShimmer({
@@ -164,92 +296,7 @@ extension WidgetExtensions on Widget
     }
   }
 }
-extension RouterExtension on Widget {
-  /// Builds a page with optional transition and duration.
-  ///
-  /// - The [transition] parameter specifies the page transition animation to be used.
-  /// - The [duration] parameter specifies the duration of the transition animation.
-  ///
-  /// Returns a [Page] object representing the built page.
-  Page<dynamic> buildPage({PageTransitions? transition, Duration? duration}) {
-    if (transition != null && transition == PageTransitions.cupertino) {
-      return CupertinoPage<dynamic>(child: this);
-    } else {
-      return customTransitionPage(this, transition, duration);
-    }
-  }
 
-  Widget withBlocProvider<T extends Cubit<Object>>(T bloc) => BlocProvider<T>.value(value: bloc, child: this);
-}
-
-extension PaddingExtension on Widget {
-  /// return padding top
-  Padding paddingTop(double top) {
-    return Padding(padding: EdgeInsets.only(top: top), child: this);
-  }
-
-  /// return padding left
-  Padding paddingLeft(double left) {
-    return Padding(padding: EdgeInsets.only(left: left), child: this);
-  }
-
-  /// return padding Directional
-  Padding paddingStart(double start) {
-    return Padding(padding: EdgeInsetsDirectional.only(start: start), child: this);
-  }
-
-  Padding paddingEnd(double end) {
-    return Padding(padding: EdgeInsetsDirectional.only(end: end), child: this);
-  }
-
-  /// return padding right
-  Padding paddingRight(double right) {
-    return Padding(padding: EdgeInsets.only(right: right), child: this);
-  }
-
-  /// return padding bottom
-  Padding paddingBottom(double bottom) {
-    return Padding(padding: EdgeInsets.only(bottom: bottom), child: this);
-  }
-
-  /// return padding all
-  Padding paddingAll(double padding) {
-    return Padding(padding: EdgeInsets.all(padding), child: this);
-  }
-
-  /// return padding Symmetric
-  Padding paddingSymmetric(double horizontal, double vertical) {
-    return Padding(padding: EdgeInsets.symmetric(vertical: vertical, horizontal: horizontal), child: this);
-  }
-
-  Padding paddingVertical(double padding) {
-    return Padding(padding: EdgeInsets.symmetric(vertical: padding), child: this);
-  }
-
-  Padding paddingHorizontal(double padding) {
-    return Padding(padding: EdgeInsets.symmetric(horizontal: padding), child: this);
-  }
-
-  /// return custom padding from each side
-  Padding paddingOnly({double top = 0.0, double left = 0.0, double bottom = 0.0, double right = 0.0}) {
-    return Padding(padding: EdgeInsets.fromLTRB(left, top, right, bottom), child: this);
-  }
-
-  Padding paddingDirectionalOnly({double top = 0.0, double start = 0.0, double bottom = 0.0, double end = 0.0}) {
-    return Padding(padding: EdgeInsetsDirectional.only(top: top, bottom: bottom, start: start, end: end), child: this);
-  }
-
-  Padding paddingDirectionalAll({double padding = 0}) {
-    return Padding(padding: EdgeInsetsDirectional.all(padding), child: this);
-  }
-
-   /// add FittedBox to parent widget
-  Widget fit({BoxFit? fit, AlignmentGeometry? alignment}) {
-    return FittedBox(fit: fit ?? BoxFit.contain, alignment: alignment ?? Alignment.center, child: this);
-  }
-
-    /// add Flexible to parent widget
-  Widget flexible({flex = 1, FlexFit? fit, bool buildWhen = true}) {
-    return buildWhen ? Flexible(flex: flex, fit: fit ?? FlexFit.loose, child: this) : this;
-  }
+extension ColorEx on Color {
+  ColorFilter get colorFilter => ColorFilter.mode(this, BlendMode.srcIn);
 }

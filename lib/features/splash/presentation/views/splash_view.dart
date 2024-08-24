@@ -17,7 +17,8 @@ class SplashView extends StatefulWidget {
   State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends State<SplashView> with SingleTickerProviderStateMixin {
+class _SplashViewState extends State<SplashView>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   @override
   void initState() {
@@ -34,33 +35,30 @@ class _SplashViewState extends State<SplashView> with SingleTickerProviderStateM
             _controller.reverse();
             context.read<AuthCubit>().updateUserData(state.authModel);
             if (state.authModel.accessToken.isEmpty) {
-              Future.delayed(const Duration(milliseconds: 500), () => AppRoutes.login.go());
+              Future.delayed(const Duration(milliseconds: 500),
+                  () => AppRoutes.login.go());
             } else {
-              Future.delayed(const Duration(milliseconds: 500), () => AppRoutes.mainView.go());
+              Future.delayed(const Duration(milliseconds: 500),
+                  () => AppRoutes.mainView.go());
             }
           },
-          onFailed: () {
-          }),
+          onFailed: () {}),
       child: Scaffold(
         body: Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [AppPalette.gradient1, AppPalette.gradient2],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: Center(
-          child: SvgPicture.asset(
-        Assets.iconsAppLogo,
-        height: 245.h,
-      )),
-    ).animate(controller: _controller).fadeIn(),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [AppPalette.gradient1, AppPalette.gradient2],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: Center(
+              child: SvgPicture.asset(
+            Assets.iconsAppLogo,
+            height: 245.h,
+          )),
+        ).animate(controller: _controller).fadeIn(),
       ),
     );
   }
 }
-
-
-
-

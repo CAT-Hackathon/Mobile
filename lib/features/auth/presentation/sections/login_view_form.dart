@@ -10,7 +10,6 @@ import 'package:met2ashara_app/core/utils/assets/images.dart';
 import 'package:met2ashara_app/core/utils/extensions/bloc_extensions.dart';
 import 'package:met2ashara_app/core/utils/strings.dart';
 import 'package:met2ashara_app/core/utils/toaster_util.dart';
-import 'package:met2ashara_app/core/utils/widgets/custom_dialog.dart';
 import 'package:met2ashara_app/core/utils/widgets/cutsom_button.dart';
 import 'package:met2ashara_app/core/utils/widgets/cutsom_txt_form_feild.dart';
 import 'package:met2ashara_app/features/auth/presentation/controller/auth_cubit/auth_cubit.dart';
@@ -39,7 +38,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
           Toaster.showToast(state.message);
         },
         onAuthorized: () {
-          AppRoutes.mainView.pushReplacement();
+          AppRoutes.mainView.go();
         },
       ),
       builder: (context, state) {
@@ -62,7 +61,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
               ),
               32.verticalSpace,
               CustomTextFormField(
-                  validator: mobileValidator,
+                  // validator: mobileValidator,
                   controller: _mobileController,
                   prefixIcon: SvgPicture.asset(
                     Assets.iconsPhoneIcon,
@@ -120,9 +119,10 @@ class _LoginViewFormState extends State<LoginViewForm> {
                 isLoading: state.authStatus.isLoading,
                 onPressed: () {
                   _formKey.currentState!.save();
-                    if (_formKey.currentState!.validate()) {
-                      context.read<AuthCubit>().login(_mobileController.text, _passwordController.text);
-                    }
+                  if (_formKey.currentState!.validate()) {
+                    context.read<AuthCubit>().login(
+                        _mobileController.text, _passwordController.text);
+                  }
                 },
               ),
             ],
