@@ -11,6 +11,7 @@ class AppPalette {
       whiteColor = Colors.white,
       greyColor = Colors.grey,
       errorColor = Color(0xffEE4646),
+      successColor = Color.fromARGB(255, 8, 172, 16),
       black = Color(0xff000000),
       transparentColor = Colors.transparent,
       lightPrimaryColor = Color(0xFFD5E4F6),

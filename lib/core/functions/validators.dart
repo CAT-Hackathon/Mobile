@@ -1,8 +1,8 @@
 String? mobileValidator(String? value) {
   if (value == null || value.isEmpty) {
     return 'Please enter your mobile number';
-  } else if (!RegExp(r'^[0-9]{10}$').hasMatch(value)) {
-    return 'Please enter a valid 10-digit mobile number';
+  } else if (!RegExp(r'^[0-10]{11}$').hasMatch(value)) {
+    return 'Please enter a valid 11-digit mobile number';
   }
   return null;
 }

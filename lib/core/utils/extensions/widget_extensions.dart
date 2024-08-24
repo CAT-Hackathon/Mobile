@@ -242,4 +242,14 @@ extension PaddingExtension on Widget {
   Padding paddingDirectionalAll({double padding = 0}) {
     return Padding(padding: EdgeInsetsDirectional.all(padding), child: this);
   }
+
+   /// add FittedBox to parent widget
+  Widget fit({BoxFit? fit, AlignmentGeometry? alignment}) {
+    return FittedBox(fit: fit ?? BoxFit.contain, alignment: alignment ?? Alignment.center, child: this);
+  }
+
+    /// add Flexible to parent widget
+  Widget flexible({flex = 1, FlexFit? fit, bool buildWhen = true}) {
+    return buildWhen ? Flexible(flex: flex, fit: fit ?? FlexFit.loose, child: this) : this;
+  }
 }

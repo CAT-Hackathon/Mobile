@@ -150,10 +150,6 @@ class Assets {
   /// assets/icons/profileInActive.svg
   static const String iconsProfileInActive = "assets/icons/profileInActive.svg";
 
-  /// Assets for iconsResume
-  /// assets/icons/resume.svg
-  static const String iconsResume = "assets/icons/resume.svg";
-
   /// Assets for iconsSeachTextFeild
   /// assets/icons/seachTextFeild.svg
   static const String iconsSeachTextFeild = "assets/icons/seachTextFeild.svg";
@@ -169,6 +165,10 @@ class Assets {
   /// Assets for iconsSettings
   /// assets/icons/settings.svg
   static const String iconsSettings = "assets/icons/settings.svg";
+
+  /// Assets for iconsWarning
+  /// assets/icons/warning.svg
+  static const String iconsWarning = "assets/icons/warning.svg";
 
   /// Assets for imagesCompanyImage
   /// assets/images/companyImage.png

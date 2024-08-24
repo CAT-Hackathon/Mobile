@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:met2ashara_app/core/router/route_names.dart';
 import 'package:met2ashara_app/core/utils/extensions/widget_extensions.dart';
@@ -27,7 +28,7 @@ class LoginView extends StatelessWidget {
             ),
           ],
         ).paddingHorizontal(16),
-      ),
+      ).animate().fade().slide(begin: const Offset(0, 0.15), end: Offset.zero),
     );
   }
 }

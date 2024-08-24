@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:met2ashara_app/core/theme/app_pallete.dart';
 import 'package:met2ashara_app/core/theme/styles.dart';
+import 'package:met2ashara_app/core/utils/widgets/custom_loading.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -12,7 +13,7 @@ class CustomButton extends StatelessWidget {
       this.height,
       this.width,
       this.txtColor,
-      this.fontSize});
+      this.fontSize, this.isLoading = false});
 
   final Color? backgroundColor;
   final BorderRadius? borderRadius;
@@ -22,6 +23,7 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final Color? txtColor;
   final double? fontSize;
+  final bool? isLoading;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -33,7 +35,9 @@ class CustomButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: borderRadius ?? BorderRadius.circular(12))),
         onPressed: onPressed,
-        child: Text(
+        child:isLoading!? 
+        const CustomLoading(color: AppPalette.lightBackgroundColor,)
+        :Text(
           text,
           style: Styles.roboto700(
               fontSize: fontSize ?? 16,

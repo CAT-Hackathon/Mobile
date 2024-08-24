@@ -1,42 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:toastification/toastification.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:met2ashara_app/core/resources/dimentions_manager.dart';
+import 'package:met2ashara_app/core/theme/app_pallete.dart';
+import 'package:met2ashara_app/core/theme/styles.dart';
+import 'package:met2ashara_app/core/utils/assets/images.dart';
+import 'package:met2ashara_app/core/utils/extensions/widget_extensions.dart';
 
-showToast(String msg, BuildContext context, {ToastificationType? type}) {
-  toastification.show(
-    context: context,
-    type: type ?? ToastificationType.error,
-    style: ToastificationStyle.minimal,
-    autoCloseDuration: const Duration(seconds: 3),
-    // title: Text(type == ToastificationType.success? S.of(context).success :type == ToastificationType.info? S.of(context).Info :S.of(context).warning),
-    description: Text(msg),
-    alignment: Alignment.bottomCenter,
-    direction: TextDirection.ltr,
-    animationDuration: const Duration(milliseconds: 300),
-    animationBuilder: (context, animation, alignment, child) {
-      return FadeTransition(
-        opacity: animation,
-        child: child,
-      );
-    },
-    icon: const Icon(Icons.close),
-    primaryColor:type == ToastificationType.success || type == ToastificationType.info? Colors.green :Colors.red,
-    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-    margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-    borderRadius: BorderRadius.circular(12),
-    // borderSide: BorderSide(color: type == ToastificationType.success || type == ToastificationType.info? Colors.green : AppPallete.errorColor),
-    boxShadow: const [
-      BoxShadow(
-        color: Color(0x07000000),
-        blurRadius: 16,
-        offset: Offset(0, 16),
-        spreadRadius: 0,
-      )
-    ],
-    showProgressBar: true,
-    closeButtonShowType: CloseButtonShowType.onHover,
-    closeOnClick: false,
-    pauseOnHover: true,
-    dragToClose: true,
-    applyBlurEffect: true,
-  );
+class CustomToast extends StatelessWidget {
+  const CustomToast({super.key, required this.isError, required this.text});
+
+  final bool isError;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    final Color color =
+        isError ? AppPalette.errorColor : AppPalette.successColor;
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14).w,
+      decoration: BoxDecoration(
+          color: color, borderRadius: BorderRadius.circular(30).r),
+      child: Row(
+        // mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(
+            isError ? Assets.iconsWarning : Assets.iconsDone,
+            height: 20,
+            width: 20,
+          ),
+          AppSize.s8.w.horizontalSpace,
+          Text(text,
+                  maxLines: 2,
+                  style: Styles.roboto600(
+                      fontSize: 14, color: AppPalette.lightBackgroundColor))
+              .fit(alignment: Alignment.center)
+              .flexible()
+        ],
+      ),
+    ).paddingHorizontal(AppSize.screenPadding);
+  }
 }

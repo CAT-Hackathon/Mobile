@@ -20,7 +20,6 @@ final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 class RouteConfigs {
   // All Routes in the app
   static final GoRouter routerConfig = GoRouter(
-    initialLocation: AppRoutes.mainView.path,
     debugLogDiagnostics: true,
     navigatorKey: rootNavigatorKey,
     routes: [
@@ -54,11 +53,14 @@ class RouteConfigs {
             const SignUpView().buildPage(transition: PageTransitions.cupertino),
       ),
       GoRoute(
-        path: AppRoutes.verification.path,
-        name: AppRoutes.verification.name,
-        pageBuilder: (context, state) => const CodeVerificationView()
-            .buildPage(transition: PageTransitions.fade),
-      ),
+          path: AppRoutes.verification.path,
+          name: AppRoutes.verification.name,
+          pageBuilder: (context, state) {
+            final mobileController = state.extra as TextEditingController;
+            return CodeVerificationView(phone: mobileController.text,)
+                .buildPage(transition: PageTransitions.fade);
+            
+          }),
       GoRoute(
         path: AppRoutes.resetPassword.path,
         name: AppRoutes.resetPassword.name,
